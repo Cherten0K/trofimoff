@@ -5,7 +5,6 @@
 using namespace std;
 
 int main(void){
-	int buf;
 	//MyInt a(5);
 	//MyInt b(a);
 	//cout << a.n << " " << b.n;	
@@ -20,6 +19,6 @@ int main(void){
 	//d = -d;
 	//cout << endl << d.n;
 	test();
-	cin >> buf; 
+	system("pause");
 	return 0;
 }

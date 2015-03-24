@@ -4,12 +4,15 @@
 
 class MyInt
 {
-public:
+protected:
 	int n;
+public:
 	MyInt(void);//реализовано
 	MyInt(const int&);//реализовано
 	MyInt(const MyInt&);//реализовано
 	~MyInt(void);
+
+	int N();
 	//арифметические
 	MyInt& operator-() throw (OverFlow);//реализовано
 	MyInt operator+(const MyInt&) throw (OverFlow);//реализовано
@@ -54,25 +57,25 @@ public:
 	MyInt& operator>>=(const MyInt&);//реализовано
 	//присваивание
 	MyInt& operator=(const MyInt&);//реализовано
-	
+
 	//friend:
-		//арифметические
+	//арифметические
 	friend MyInt operator+(const int, const MyInt&) throw (OverFlow);//реализовано
 	friend MyInt operator-(const int, const MyInt&) throw (OverFlow);//реализовано
 	friend MyInt operator/(const int, const MyInt&) throw (DivideByZero);//реализовано
 	friend MyInt operator*(const int, const MyInt&) throw (OverFlow);//реализовано
 	friend MyInt operator%(const int, const MyInt&) throw (DivideByZero);//реализовано
-		//сравнение
+	//сравнение
 	friend bool operator>(const int, const MyInt&);//реализовано
 	friend bool operator<(const int, const MyInt&);//реализовано
 	friend bool operator>=(const int, const MyInt&);//реализовано
 	friend bool operator<=(const int, const MyInt&);//реализовано
 	friend bool operator==(const int, const MyInt&);//реализовано
 	friend bool operator!=(const int, const MyInt&);//реализовано
-		//логические
+	//логические
 	friend bool operator&&(const int, const MyInt&);//реализовано
 	friend bool operator||(const int, const MyInt&);//реализовано
-		//побитовые
+	//побитовые
 	friend MyInt operator&(const int, const MyInt&);//реализовано
 	friend MyInt operator|(const int, const MyInt&);//реализовано
 	friend MyInt operator^(const int, const MyInt&);//реализовано
