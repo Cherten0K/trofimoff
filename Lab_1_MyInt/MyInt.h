@@ -4,15 +4,12 @@
 
 class MyInt
 {
-protected:
-	int n;
 public:
+	int n;
 	MyInt(void);//реализовано
 	MyInt(const int&);//реализовано
 	MyInt(const MyInt&);//реализовано
 	~MyInt(void);
-
-	int N();
 	//арифметические
 	MyInt& operator-() throw (OverFlow);//реализовано
 	MyInt operator+(const MyInt&) throw (OverFlow);//реализовано

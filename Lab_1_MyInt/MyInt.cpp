@@ -12,10 +12,6 @@ MyInt::MyInt(const MyInt &right){
 	this->n=right.n;
 }
 
-int MyInt::N(){
-	return n;
-}
-
 MyInt& MyInt::operator -(){
 	if (this->n==INT_MIN){
 		throw new OverFlow(this->n, "-");
@@ -52,7 +48,7 @@ MyInt MyInt::operator /(const MyInt &right){
 MyInt MyInt::operator *(const MyInt &right){
 	long long a = this->n, b = right.n;
 	long long c = a * b;
-	if (c <= INT_MIN || c>=INT_MAX){
+	if (c <= INT_MIN && c>=INT_MAX){
 		throw new OverFlow(this->n, "*", right.n);
 	}
 	return MyInt(this->n * right.n);
@@ -122,7 +118,7 @@ MyInt MyInt::operator ++(int _t){
 	if (this->n == INT_MAX)
 		throw new OverFlow(this->n, "++");
 	MyInt t(*this);
-	++t;
+	++(*this);
 	return t;
 }
 
@@ -137,7 +133,7 @@ MyInt MyInt::operator --(int _t){
 	if (this->n == INT_MIN)
 		throw new OverFlow(this->n, "--");
 	MyInt t(*this);
-	--t;
+	++(*this);
 	return t;
 }
 
