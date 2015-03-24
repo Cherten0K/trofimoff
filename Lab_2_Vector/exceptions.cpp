@@ -1,25 +1,24 @@
 #include "exceptions.h"
-
-
-exceptions::exceptions()
-{
-	message = new char[30];
-	message = "Somewhere exception occurred";
-}
-
-
-exceptions::~exceptions()
-{
-	delete[] message;
-}
-
-char* exceptions::what(){
-	return message;
-}
+#include <cstdio>
 
 DiscrepancySize::DiscrepancySize(size_t _left, size_t _right){
 	left = _left;
-	rigth = _right;
+	right = _right;
 	message = new char[128];
 	sprintf(message, "The discrepancy between the size of arrays: %i!=%i", left, right);
+}
+
+char* DiscrepancySize::what(){
+	return message;
+}
+
+OutsideRange::OutsideRange(size_t _index, size_t _range){
+	index = _index;
+	range = _range;
+	message = new char[128];
+	sprintf(message, "Outside the range of the array: %i not in [0..%i]", index, range);
+}
+
+char* OutsideRange::what(){
+	return message;
 }
