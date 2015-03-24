@@ -24,6 +24,10 @@ OverFlow::OverFlow( char* oper, int number){
 	sprintf(message, "The error during operation %s%i: Overflow", op, right);
 }
 
+char* OverFlow::what(){
+	return message;
+}
+
 DivideByZero::DivideByZero(){
 	message = (char*)malloc(18 * sizeof(char));
 	sprintf(message, "%s", "Division by zero");
