@@ -1,21 +1,20 @@
 #pragma once
-#include <iostream>
+#include <string>
 
-using namespace std;
-
-class exceptions{
+class DiscrepancySize{
 protected:
-	char* message;
-public:
-	virtual char* what();
-	exceptions();
-	~exceptions();
-};
-
-class DiscrepancySize: exceptions{
-private:
-	size_t left, rigth;
+	std::string message;
+	size_t left, right;
 public:
 	DiscrepancySize(size_t, size_t);
-	virtual char* what();
+	std::string what();
+};
+
+class OutsideRange{
+protected:
+	size_t index, range;
+	std::string message;
+public:
+	OutsideRange(size_t, size_t);
+	std::string what();
 };

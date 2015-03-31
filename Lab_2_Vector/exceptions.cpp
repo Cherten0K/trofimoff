@@ -1,25 +1,27 @@
 #include "exceptions.h"
-
-
-exceptions::exceptions()
-{
-	message = new char[30];
-	message = "Somewhere exception occurred";
-}
-
-
-exceptions::~exceptions()
-{
-	delete[] message;
-}
-
-char* exceptions::what(){
-	return message;
-}
+#include <sstream>
 
 DiscrepancySize::DiscrepancySize(size_t _left, size_t _right){
 	left = _left;
-	rigth = _right;
+	right = _right;
+	std::stringstream stream;
+	stream << "The discrepancy between the size of arrays: " << left << " != " << right;
+	message = stream.str();
+}
+
+std::string DiscrepancySize::what(){
+	return message;
+}
+
+OutsideRange::OutsideRange(size_t _index, size_t _range){
+	index = _index;
+	range = _range;
 	message = new char[128];
-	sprintf(message, "The discrepancy between the size of arrays: %i!=%i", left, right);
+	std::stringstream stream;
+	stream << "Outside the range of the array: " << index << " not in [0.." << range << "]";
+	message = stream.str();
+}
+
+std::string OutsideRange::what(){
+	return message;
 }

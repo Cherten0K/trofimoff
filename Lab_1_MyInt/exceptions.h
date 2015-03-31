@@ -1,23 +1,23 @@
-#include <cstdio>
-#include <cstdlib>
+#pragma once
+#include <string>
 
 class OverFlow{
 protected:
 	int left, right;
-	char *message;
+	std::string message;
 	char *op;
 public:
 	OverFlow(int, char*, int);
 	OverFlow(int, char*);
 	OverFlow(char*, int);
 	
-	char* what();
+	std::string what();
 };
 
 class DivideByZero{
 protected:
-	char* message;
+	std::string message;
 public:
 	DivideByZero();
-	char* what();
+	std::string what();
 };
