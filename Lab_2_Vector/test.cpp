@@ -19,7 +19,7 @@ void test(void){
 				break;
 		}
 		if (!result)
-			cout << endl << "!!!Test fails unary subtraction" << endl << endl;
+			cout << endl << "!!!Test fails unary subtraction: wrong answer" << endl << endl;
 	}
 	catch (...){
 		cout << endl << "!!!Test fails unary subtraction: unexpected exception" << endl << endl;
@@ -38,7 +38,7 @@ void test(void){
 				break;
 		}
 		if (!result)
-			cout << endl << "!!!Test fails addition" << endl << endl;
+			cout << endl << "!!!Test fails addition: wrong answer" << endl << endl;
 	}
 	catch (...){
 		cout << endl << "!!!Test fails addition: unexpected exception" << endl << endl;
@@ -47,7 +47,7 @@ void test(void){
 	try{
 		Vector test_addition_A(length1, (float*)array1), test_addition_B(length3, (float*)array3);
 		test_addition_A + test_addition_B;
-		cout << endl << "*** Test for discrepancy of size when adding fails ***" << endl << endl;
+		cout << endl << "!!!!Test for discrepancy of size when adding fails: was not an exception" << endl << endl;
 	}
 	catch (DiscrepancySize *of){
 	}
@@ -68,7 +68,7 @@ void test(void){
 				break;
 		}
 		if (!result)
-			cout << endl << "!!!Test fails substraction" << endl << endl;
+			cout << endl << "!!!Test fails substraction: wrong answer" << endl << endl;
 	}
 	catch (...){
 		cout << endl << "!!!Test fails substraction: unexpected exception" << endl << endl;
@@ -77,7 +77,7 @@ void test(void){
 	try{
 		Vector test_substraction_A(length1, (float*)array1), test_substraction_B(length3, (float*)array3);
 		test_substraction_A - test_substraction_B;
-		cout << endl << "*** Test for discrepancy of size with substraction fails ***" << endl << endl;
+		cout << endl << "!!!Test for discrepancy of size with substraction fails: was not an exception" << endl << endl;
 	}
 	catch (DiscrepancySize *of){
 	}
@@ -91,7 +91,7 @@ void test(void){
 		double result_multiplication = test_multiplication_A * test_multiplication_B;
 		double desired_result_multiplication = 40;
 		if (result_multiplication!=desired_result_multiplication)
-			cout << endl << "!!!Test fails multiplication" << endl << endl;
+			cout << endl << "!!!Test fails multiplication: wrong answer" << endl << endl;
 	}
 	catch (...){
 		cout << endl << "!!!Test fails substraction: unexpected exception" << endl << endl;
@@ -100,7 +100,7 @@ void test(void){
 	try{
 		Vector test_multiplication_A(length1, (float*)array1), test_multiplication_B(length3, (float*)array3);
 		test_multiplication_A * test_multiplication_B;
-		cout << endl << "*** Test for discrepancy of size with multiplication fails ***" << endl << endl;
+		cout << endl << "!!!Test for discrepancy of size with multiplication fails: was not an exception" << endl << endl;
 	}
 	catch (DiscrepancySize *of){
 	}
@@ -121,11 +121,12 @@ void test(void){
 				break;
 		}
 		if (!result)
-			cout << endl << "!!!Test fails multiplication on number" << endl << endl;
+			cout << endl << "!!!Test fails multiplication on number: wrong answer" << endl << endl;
 	}
 	catch (...){
 		cout << endl << "!!!Test fails multiplication on number: unexpected exception" << endl << endl;
 	}
+
 	try{
 		Vector test_multiplication_B(length1, (float*)array1);
 		float test_multiplication_A = 3;
@@ -139,7 +140,7 @@ void test(void){
 				break;
 		}
 		if (!result)
-			cout << endl << "!!!Test fails friend multiplication on number" << endl << endl;
+			cout << endl << "!!!Test fails friend multiplication on number: wrong answer" << endl << endl;
 	}
 	catch (...){
 		cout << endl << "!!!Test fails friend multiplication on number: unexpected exception" << endl << endl;
