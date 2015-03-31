@@ -1,34 +1,41 @@
 #include "exceptions.h"
+#include <sstream>
 
 OverFlow::OverFlow(int l, char* oper, int r){
 	left = l;
 	right = r;
 	op = oper;
-	message = (char*)malloc(128*sizeof(char));
-	sprintf(message, "The error during operation %i%s%i: Overflow", left, op, right);
+	std::stringstream stream;
+	stream << "The error during operation: " << left << oper << right << ":OverFlow";
+	message = stream.str();
 }
 
 OverFlow::OverFlow(int number, char* oper){
 	left = number;
 	right = 0;
 	op = oper;
-	message = (char*)malloc(128*sizeof(char));
-	sprintf(message, "The error during operation %i%s: Overflow", left, op);
+	std::stringstream stream;
+	stream << "The error during operation: " << left << oper << ":OverFlow";
+	message = stream.str();
 }
 
 OverFlow::OverFlow( char* oper, int number){
 	left = 0;
 	right = number;
 	op = oper;
-	message = (char*)malloc(128 * sizeof(char));
-	sprintf(message, "The error during operation %s%i: Overflow", op, right);
+	std::stringstream stream;
+	stream << "The error during operation: " << oper << right << ":OverFlow";
+	message = stream.str();
+}
+
+std::string OverFlow::what(){
+	return message;
 }
 
 DivideByZero::DivideByZero(){
-	message = (char*)malloc(18 * sizeof(char));
-	sprintf(message, "%s", "Division by zero");
+	message = std::string("Division by zero");
 }
 
-char* DivideByZero::what(){
+std::string DivideByZero::what(){
 	return message;
 }

@@ -1,20 +1,20 @@
 #pragma once
-
+#include <string>
 
 class DiscrepancySize{
 protected:
-	char* message;
+	std::string message;
 	size_t left, right;
 public:
 	DiscrepancySize(size_t, size_t);
-	virtual char* what();
+	std::string what();
 };
 
 class OutsideRange{
 protected:
 	size_t index, range;
-	char *message;
+	std::string message;
 public:
 	OutsideRange(size_t, size_t);
-	char *what();
+	std::string what();
 };

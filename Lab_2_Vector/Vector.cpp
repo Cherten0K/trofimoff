@@ -25,7 +25,7 @@ Vector::Vector(size_t size, float *_array){
 
 Vector::Vector(const Vector &vector){
 	length = vector.length;
-	array = new float(length);
+	array = new float[length];
 	for (size_t i = 0; i < length; i++){
 		array[i] = vector.array[i];
 	}
@@ -46,6 +46,7 @@ Vector Vector::operator+(const Vector &right){
 	for (size_t i = 0; i < length; i++){
 		buf.array[i] += right.array[i];
 	}
+	return buf;
 }
 
 Vector Vector::operator-(const Vector &right){
@@ -63,7 +64,7 @@ double Vector::operator*(const Vector &right){
 		throw new DiscrepancySize(length, right.length);
 	double result = 0;
 	for (size_t i = 0; i < length; i++){
-		result += array[i]+right.array[i];
+		result += array[i]*right.array[i];
 	}
 	return result;
 }
@@ -96,6 +97,17 @@ ostream& operator <<(ostream& out,const Vector& vector){
 	}
 	out << vector.array[(size_t)(vector.length - 1)];
 	return out;
+}
+
+Vector& Vector::operator =(const Vector &vector){
+	if (&vector != this){
+		length = vector.length;
+		array = new float[length];
+		for (size_t i = 0; i < length; i++){
+			array[i] = vector.array[i];
+		}
+	}
+	return *this;
 }
 
 Vector::~Vector()
