@@ -92,7 +92,7 @@ float& Vector::operator[](const size_t index){
 }
 
 ostream& operator <<(ostream& out,const Vector& vector){
-	for (size_t i = 0; i < vector.length; i++){
+	for (size_t i = 0; i < vector.length -1; i++){
 		out << vector.array[i] << ", ";
 	}
 	out << vector.array[(size_t)(vector.length - 1)];
