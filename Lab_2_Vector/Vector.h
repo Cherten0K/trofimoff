@@ -26,6 +26,8 @@ public:
 	
 	float& operator[](const size_t) throw(OutsideRange);
 
+	size_t Length();
+
 	friend Vector operator*(const float, const Vector&);
 	friend ostream& operator <<(ostream&, const Vector&);
 	~Vector();

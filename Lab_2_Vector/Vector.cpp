@@ -31,6 +31,10 @@ Vector::Vector(const Vector &vector){
 	}
 }
 
+size_t Vector::Length(){
+	return length;
+}
+
 Vector Vector::operator-(){
 	Vector buf(*this);
 	for (size_t i = 0; i < length; i++){
@@ -112,5 +116,5 @@ Vector& Vector::operator =(const Vector &vector){
 
 Vector::~Vector()
 {
-	delete array;
+	delete[] array;
 }

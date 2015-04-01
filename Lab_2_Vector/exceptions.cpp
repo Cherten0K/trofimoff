@@ -1,11 +1,26 @@
 #include "exceptions.h"
 #include <sstream>
 
-DiscrepancySize::DiscrepancySize(size_t _left, size_t _right){
+DiscrepancySize::DiscrepancySize(){
+	left = right = N1 = N2 = 0;
+	std::stringstream stream;
+	stream << "The discrepancy between the size of arrays";
+	message = stream.str();
+}
+
+DiscrepancySize::DiscrepancySize(size_t _left, size_t _right):DiscrepancySize(){
 	left = _left;
 	right = _right;
 	std::stringstream stream;
 	stream << "The discrepancy between the size of arrays: " << left << " != " << right;
+	message = stream.str();
+}
+
+DiscrepancySize::DiscrepancySize(size_t _M1, size_t _N1, size_t _M2, size_t _N2):DiscrepancySize(_M1, _M2){
+	N1 = _N1;
+	N2 = _N2;
+	std::stringstream stream;
+	stream << "The discrepancy between the size of matrix: " << left << " != " << right  << " and " << N1 << "!=" << N2;
 	message = stream.str();
 }
 

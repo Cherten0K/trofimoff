@@ -1,3 +1,4 @@
+#pragma once
 #include "Vector.h"
 #include "exceptions.h"
 
@@ -10,13 +11,18 @@ public:
 	Matrix(size_t, size_t, float**);
 	Matrix(const Matrix&);
 
-	Vector* operator[](size_t) throw(OutsideRange);
+	Vector& operator[](size_t) throw(OutsideRange);
 	Matrix operator-();
-	Matrix operator+(const Matrix&);
-	Matrix operator-(const Matrix&);
+	Matrix operator+(const Matrix&) throw(DiscrepancySize);
+	Matrix operator-(const Matrix&) throw(DiscrepancySize);
 
-	Vector operator*(const Matrix&);
-	Matrix operator*(const float);
+	Matrix operator~();
+
+	Vector operator*(Vector&) throw(DiscrepancySize);
+	Matrix operator*(const float) throw(DiscrepancySize);
+	Matrix operator*(Matrix&) throw(DiscrepancySize);
+	
+	friend Matrix operator*(const float, const Matrix&) throw(DiscrepancySize);
 	friend ostream& operator <<(ostream&, const Matrix&);
 	~Matrix();
 

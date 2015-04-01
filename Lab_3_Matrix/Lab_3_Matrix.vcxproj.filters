@@ -27,7 +27,7 @@
     <ClCompile Include="Matirx.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="test_matrix.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +35,10 @@
     <ClInclude Include="Matrix.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
+    <ClInclude Include="..\Lab_2_Vector\exceptions.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="test_matrix.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>

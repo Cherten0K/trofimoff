@@ -73,11 +73,12 @@
     <ClCompile Include="..\Lab_2_Vector\Vector.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Matirx.cpp" />
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="test_matrix.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Lab_2_Vector\exceptions.h" />
     <ClInclude Include="Matrix.h" />
-    <ClInclude Include="test.h" />
+    <ClInclude Include="test_matrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -94,7 +94,7 @@ void test(void){
 			cout << endl << "!!!Test fails multiplication: wrong answer" << endl << endl;
 	}
 	catch (...){
-		cout << endl << "!!!Test fails substraction: unexpected exception" << endl << endl;
+		cout << endl << "!!!Test fails multiplication: unexpected exception" << endl << endl;
 	}
 
 	try{
