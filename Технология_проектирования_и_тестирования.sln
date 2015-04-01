@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab_2_Vector", "Lab_2_Vecto
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab_3_Matrix", "Lab_3_Matrix\Lab_3_Matrix.vcxproj", "{4857494D-AC5C-432C-AEB8-D26CD31F0CB5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Lab_4_Graphics", "Lab_4_Graphics\Lab_4_Graphics.vcxproj", "{448459B6-A947-417E-B8BE-3F76CB02CBE0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GraphicsLibrary", "GraphicsLibrary\GraphicsLibrary.vcxproj", "{619D996B-1996-4376-8F14-B6B667F55C95}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +31,14 @@ Global
 		{4857494D-AC5C-432C-AEB8-D26CD31F0CB5}.Debug|Win32.Build.0 = Debug|Win32
 		{4857494D-AC5C-432C-AEB8-D26CD31F0CB5}.Release|Win32.ActiveCfg = Release|Win32
 		{4857494D-AC5C-432C-AEB8-D26CD31F0CB5}.Release|Win32.Build.0 = Release|Win32
+		{448459B6-A947-417E-B8BE-3F76CB02CBE0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{448459B6-A947-417E-B8BE-3F76CB02CBE0}.Debug|Win32.Build.0 = Debug|Win32
+		{448459B6-A947-417E-B8BE-3F76CB02CBE0}.Release|Win32.ActiveCfg = Release|Win32
+		{448459B6-A947-417E-B8BE-3F76CB02CBE0}.Release|Win32.Build.0 = Release|Win32
+		{619D996B-1996-4376-8F14-B6B667F55C95}.Debug|Win32.ActiveCfg = Debug|Win32
+		{619D996B-1996-4376-8F14-B6B667F55C95}.Debug|Win32.Build.0 = Debug|Win32
+		{619D996B-1996-4376-8F14-B6B667F55C95}.Release|Win32.ActiveCfg = Release|Win32
+		{619D996B-1996-4376-8F14-B6B667F55C95}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

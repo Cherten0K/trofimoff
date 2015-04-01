@@ -1,0 +1,5 @@
+#include "Base.h"
+#include "Circle.h"
+#include "Figure.h"
+#include "Line.h"
+#include "Point.h"
